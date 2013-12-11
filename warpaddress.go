@@ -95,22 +95,4 @@ func Generate(key string) WarpAddress {
 	result := createBitcoinAddress(hexSeeds[2])
 	address := WarpAddress{seeds: hexSeeds, output: result, Password: key}
 	return address
-	//keys := []string{ "AA" }
-	//channels := make([]chan, len(keys))
-
-	// for idx, key := range keys {
-	//     go createSeeds(key, channels[idx])
-	// }
-
-	// var seeds [][]byte
-	// for idx, channel := range channels {
-	//     seeds = <- seedChannel
-
-	//     scryptHexKey := hex.EncodeToString(seeds[0])
-	//     pbkdf2HexKey := hex.EncodeToString(seeds[1])
-	//     finalHexKey := hex.EncodeToString(seeds[2])
-	//     fmt.Println("Scrypt Seed: ", scryptHexKey)
-	//     fmt.Println("PBKDF2 Seed: ", pbkdf2HexKey)
-	//     fmt.Println("Final Seed: ", finalHexKey)
-	// }
 }
