@@ -2,7 +2,6 @@ package warpaddress
 
 import (
 	"fmt"
-	//"reflect"
 	"encoding/hex"
 	"math"
 	"strings"
@@ -64,6 +63,8 @@ func createSeeds(key string) [][]byte {
 	return [][]byte{scryptKey, pbkdf2Key, finalKey}
 }
 
+// This is very much a wrapper around 'bu' with the parameters we need. 
+// It then processes the result and assigns it to a map (very ruby style)
 func createBitcoinAddress(secret string) map[string]string {
 	cmd := exec.Command("bu", "-a", secret)
 	//cmd.Stdin = strings.NewReader("some input")
